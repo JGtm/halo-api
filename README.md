@@ -1,4 +1,7 @@
-# github.com/JGtm/LevelUp/libs/haloapi
+# github.com/JGtm/halo-api
+
+This module is extracted from the LevelUp monorepo (`github.com/JGtm/LevelUp`), which remains the
+place where it is developed; released versions are published here.
 
 Stateless Go clients for the Halo web services (Halo Infinite, Halo 5: Guardians, Xbox Live
 achievements) and the Xbox Live authentication chain that feeds them: URLs, headers, retry
@@ -6,8 +9,8 @@ policies and raw JSON DTOs, with no storage and no decisions.
 
 ## Status
 
-Experimental. The API is not stable before v1.0.0; minor versions may break. Published from the
-LevelUp monorepo as a Go module in a subdirectory; versions are tagged `libs/haloapi/vX.Y.Z`.
+Experimental. The API is not stable before v1.0.0; minor versions may break. Versions are tagged
+`vX.Y.Z` in this repository.
 
 ## What it is
 
@@ -37,11 +40,10 @@ LevelUp monorepo as a Go module in a subdirectory; versions are tagged `libs/hal
 ## Install
 
 ```
-go get github.com/JGtm/LevelUp/libs/haloapi@v0.1.0
+go get github.com/JGtm/halo-api@v0.1.0
 ```
 
-Works from any Go module; no `replace` directive is needed. (Go resolves `v0.1.0` to the
-subdirectory tag `libs/haloapi/v0.1.0`.)
+Works from any Go module; no `replace` directive is needed.
 
 ## Example
 
@@ -77,15 +79,15 @@ Go 1.26.10 (`go.mod`). Pure Go, no cgo. Third-party dependency: `golang.org/x/sy
 
 ## License
 
-AGPL-3.0, the repository license (`LICENSE`, `NOTICE` at the repository root).
+AGPL-3.0-only (`LICENSE` at the repository root).
 
 ## Contributing
 
-Issues and pull requests on `github.com/JGtm/LevelUp`, with the path prefix `libs/haloapi/` in
-the title. From the module directory: `go vet ./... && go test ./...`. The repository
+Development happens in the LevelUp monorepo: issues and pull requests on `github.com/JGtm/LevelUp`,
+with the path prefix `libs/haloapi/` in the title. Here: `go vet ./... && go test ./...`. The repository
 convention is French-language code comments and many French identifiers (`Endpoints`, `Retry`
-and `Doer` aside), so expect them in the source. Design: [ADR 0041](../../docs/adr/0041-go-modules-under-libs.md)
-(modules under `libs/`) and [ADR 0042](../../docs/adr/0042-halo-api-protocol-vs-exploitation.md)
+and `Doer` aside), so expect them in the source. Design: [ADR 0041](https://github.com/JGtm/LevelUp/blob/main/docs/adr/0041-go-modules-under-libs.md)
+(modules under `libs/`) and [ADR 0042](https://github.com/JGtm/LevelUp/blob/main/docs/adr/0042-halo-api-protocol-vs-exploitation.md)
 (protocol here, exploitation in LevelUp).
 
 ## Not affiliated
