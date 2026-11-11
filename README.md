@@ -1,17 +1,14 @@
 # github.com/JGtm/halo-api
 
-This module is extracted from the LevelUp monorepo (`github.com/JGtm/LevelUp`), which remains the
-place where it is developed; released versions are published here.
-
 Stateless Go clients for the Halo web services (Halo Infinite, Halo 5: Guardians, Xbox Live
 achievements) and the Xbox Live authentication chain that feeds them: URLs, headers, retry
 policies and raw JSON DTOs, with no storage and no decisions.
 
 ## Status
 
-Used in production by LevelUp since October 2026. From v1.0.0 the exported API
-follows semantic versioning: a breaking change means a new major version. Versions are tagged
-`vX.Y.Z` in this repository.
+Used in production by LevelUp since October 2026. From v1.0.0 the exported API follows semantic
+versioning (a breaking change means a new major version). Published as a Go module in its own
+repository; versions are tagged `vX.Y.Z`.
 
 ## What it is
 
@@ -74,21 +71,21 @@ Retry policies differ on purpose between services (`RetryProvider`, `RetryDiscov
 
 ## Requirements
 
-Go 1.26.10 (`go.mod`). Pure Go, no cgo. Third-party dependency: `golang.org/x/sync`
+Go 1.26.11 (`go.mod`). Pure Go, no cgo. Third-party dependency: `golang.org/x/sync`
 (`golang.org/x/time` is used by tests only). The services need valid Xbox / Halo tokens:
 `xblauth` performs the exchange chain, but you bring the Azure client and own the storage.
 
 ## License
 
-AGPL-3.0-only (`LICENSE` at the repository root).
+AGPL-3.0, the repository license (`LICENSE`, `NOTICE` at the repository root).
 
 ## Contributing
 
-Development happens in the LevelUp monorepo: issues and pull requests on `github.com/JGtm/LevelUp`,
-with the path prefix `libs/haloapi/` in the title. Here: `go vet ./... && go test ./...`. The repository
+Issues and pull requests on `github.com/JGtm/LevelUp`, with the path prefix `libs/haloapi/` in
+the title. From the module directory: `go vet ./... && go test ./...`. The repository
 convention is French-language code comments and many French identifiers (`Endpoints`, `Retry`
-and `Doer` aside), so expect them in the source. Design: [ADR 0041](https://github.com/JGtm/LevelUp/blob/main/docs/adr/0041-go-modules-under-libs.md)
-(modules under `libs/`) and [ADR 0042](https://github.com/JGtm/LevelUp/blob/main/docs/adr/0042-halo-api-protocol-vs-exploitation.md)
+and `Doer` aside), so expect them in the source. Design: [ADR 0041](../../docs/adr/0041-go-modules-under-libs.md)
+(modules under `libs/`) and [ADR 0042](../../docs/adr/0042-halo-api-protocol-vs-exploitation.md)
 (protocol here, exploitation in LevelUp).
 
 ## Not affiliated
